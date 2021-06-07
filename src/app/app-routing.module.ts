@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'characterlist',
+    loadChildren: () => import('./characterlist/characterlist.module').then( m => m.CharacterlistPageModule)
+  },
+  {
+    path: 'profile/:id',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
+  },
 ];
 
 @NgModule({
